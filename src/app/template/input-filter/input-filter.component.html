@@ -1,0 +1,5 @@
+<div class="form-group">
+    <label class="text-light label">{{ label }} </label>
+    <input [type]="type" class="form-control input-filter" [id]="id" [placeholder]="placeholder"
+        (keyup)="onKeyPress($event.target.value)">
+</div>
