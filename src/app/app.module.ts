@@ -7,7 +7,8 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ListPokemonsComponent } from './components/list-pokemons/list-pokemons.component';
 import { DetailPokemonComponent } from './components/detail-pokemon/detail-pokemon.component';
-import { NotFoundComponent } from './components/not-found/not-found.component'
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TitlePageComponent } from './template/title-page/title-page.component'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component'
     HeaderComponent,
     ListPokemonsComponent,
     DetailPokemonComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TitlePageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component'
 
       },
       {
-        path: '/detail-pokemon/:id', component: DetailPokemonComponent,
+        path: 'detail-pokemon/:id', component: DetailPokemonComponent,
       },
       {
         path: '', redirectTo: '/pokemon-list', pathMatch: 'full'
