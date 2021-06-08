@@ -1,3 +1,13 @@
 nav {
     position: relative;
 }
+
+.logo-img{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+
+.logo-span{
+    margin-left: 2%;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-pokemon',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailPokemonComponent implements OnInit {
 
-  constructor() { }
+  pokemon;
+  titlePage: string;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+      this.pokemon  = this.route.snapshot.data['pokemon'];
+      console.log(this.pokemon);
+      this.titlePage = 'Este é o ' + this.pokemon.name;
   }
 
 }

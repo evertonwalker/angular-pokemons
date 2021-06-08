@@ -24,5 +24,13 @@ export class PokemonRepositoryService {
       )
   }
 
+  getPokemonDataUrl(url: string): Observable<any>{
+    return this.http.get(url);
+  }
+
+  getPokemonByName(name: string): Observable<any>{
+    return this.http.get(this.url + `/pokemon/${name}`);
+  }
+
 
 }

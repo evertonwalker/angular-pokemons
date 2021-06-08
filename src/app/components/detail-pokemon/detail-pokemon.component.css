@@ -1,0 +1,12 @@
+img{ 
+    width: auto;
+    height: 180px;
+    border: 1px solid red ;
+    border-radius: 8px;
+    background-image: linear-gradient(rgb(26, 25, 25), rgb(165, 11, 11));
+}
+
+.div-img {
+    margin-bottom: 2%;
+    text-align: center;
+}

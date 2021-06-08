@@ -1,1 +1,21 @@
-<p>detail-pokemon works!</p>
+<div class="container">
+    <app-title-page [text]="titlePage" ></app-title-page>
+
+    <div class="row ">
+
+        <div class="div-img col-md-3 col-sm-6 col-12" >
+            <img [src]="pokemon.sprites.front_default">
+        </div>
+        <div class="div-img col-md-3 col-sm-6 col-12" >
+            <img [src]="pokemon.sprites.back_default">
+        </div>
+        <div class="div-img col-md-3 col-sm-6 col-12" >
+            <img [src]="pokemon.sprites.front_shiny">
+        </div>
+        <div class="div-img col-md-3 col-sm-6 col-12" >
+            <img [src]="pokemon.sprites.back_shiny">
+        </div>
+    </div>
+
+
+</div>

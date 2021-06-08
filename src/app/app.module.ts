@@ -16,6 +16,7 @@ import { CardSimplePokemonComponent } from './template/card-simple-pokemon/card-
 import { LoadingSpinnerComponent } from './template/loading-spinner/loading-spinner.component';
 
 import { FilterByName } from './pipes/filter-by-name.ipe';
+import { PokemonResolve } from './resolvers/pokemon-resolver';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,10 @@ import { FilterByName } from './pipes/filter-by-name.ipe';
 
       },
       {
-        path: 'detail-pokemon/:id', component: DetailPokemonComponent,
+        path: 'detail-pokemon/:name', component: DetailPokemonComponent,
+        resolve: {
+          pokemon: PokemonResolve
+        }
       },
       {
         path: '', redirectTo: '/pokemon-list', pathMatch: 'full'

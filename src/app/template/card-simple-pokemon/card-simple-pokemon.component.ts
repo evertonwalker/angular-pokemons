@@ -9,10 +9,12 @@ import { PokemonGeneric } from 'src/app/interfaces/Pokemon-generic.interface';
 export class CardSimplePokemonComponent implements OnInit {
 
   @Input() pokemon: PokemonGeneric;
+  urlLink;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.urlLink = '../detail-pokemon/' + this.pokemon.name;
   }
 
   getFisrtCaps(name: string): string {
