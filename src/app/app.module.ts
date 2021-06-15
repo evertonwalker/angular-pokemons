@@ -17,6 +17,8 @@ import { LoadingSpinnerComponent } from './template/loading-spinner/loading-spin
 
 import { FilterByName } from './pipes/filter-by-name.ipe';
 import { PokemonResolve } from './resolvers/pokemon-resolver';
+import { ImagemPokemonComponent } from './components/template/imagem-pokemon/imagem-pokemon.component';
+import { ElementTypeComponent } from './components/template/element-type/element-type.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { PokemonResolve } from './resolvers/pokemon-resolver';
     CardSimplePokemonComponent,
     LoadingSpinnerComponent,
     FilterByName,
+    ImagemPokemonComponent,
+    ElementTypeComponent,
   ],
   imports: [
     BrowserModule,

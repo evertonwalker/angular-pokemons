@@ -1,20 +1,15 @@
-<div class="container">
+<div class="container" *ngIf="pokemon">
     <app-title-page [text]="titlePage" ></app-title-page>
 
-    <div class="row ">
+    <div class="row justify-content-between ">
+        <app-imagem-pokemon [url]="pokemon.sprites.front_default" ></app-imagem-pokemon>
+        <app-imagem-pokemon [url]="pokemon.sprites.back_default" ></app-imagem-pokemon>
+        <app-imagem-pokemon [url]="pokemon.sprites.front_shiny" ></app-imagem-pokemon>
+        <app-imagem-pokemon [url]="pokemon.sprites.back_shiny" ></app-imagem-pokemon>
+    </div>
 
-        <div class="div-img col-md-3 col-sm-6 col-12" >
-            <img [src]="pokemon.sprites.front_default">
-        </div>
-        <div class="div-img col-md-3 col-sm-6 col-12" >
-            <img [src]="pokemon.sprites.back_default">
-        </div>
-        <div class="div-img col-md-3 col-sm-6 col-12" >
-            <img [src]="pokemon.sprites.front_shiny">
-        </div>
-        <div class="div-img col-md-3 col-sm-6 col-12" >
-            <img [src]="pokemon.sprites.back_shiny">
-        </div>
+    <div class="row">
+        <app-element-type [element]="pokemon.types[0].name"></app-element-type>
     </div>
 
 
