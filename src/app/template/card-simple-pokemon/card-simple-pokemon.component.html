@@ -1,7 +1,7 @@
 <div class="row" [routerLink]="urlLink">
     <div class="col-12">
         <span class="text-light card">
-           {{  getFisrtCaps(pokemon.name) }}
+           {{ pokemon.name | FisrtLetterUppercase }}
         </span>
     </div>
 </div>

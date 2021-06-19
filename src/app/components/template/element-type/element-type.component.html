@@ -1,6 +1,14 @@
+
 <div class="col-12 img-element">
-    <span class="span-element">
-        Elemento: 
+  <hr>
+  <span class="span-element">
+          Tipo:
+      </span>
+    </div>
+<div class="row">
+  <div class="col-12 col-sm-2 " *ngFor="let type of elements">
+    <span class="element" [ngClass]="type.name">
+        {{ type.name | FisrtLetterUppercase}}
     </span>
-    <img [src]="url">
+  </div>
 </div>

@@ -8,18 +8,22 @@ import { Component, Input, OnChanges } from '@angular/core';
 })
 export class ElementTypeComponent implements OnChanges {
 
-  @Input() element: string;
-  url: string;
+  @Input() element: any;
+  elements = [];
 
   constructor() { }
 
-  ngOnChanges(simple: SimpleChanges): void {
-      
-      console.log(simple)
-    // switch (this.element){ 
-      //   case 'water':
-      //   this.url = 'https://www.revivedwater.eu/sites/default/files/styles/col_/public/2017-08/krystian-tambur-101317.jpg?itok=3_-Ct8kV'
-      // }
+  ngOnChanges(changes: SimpleChanges): void {
+
+      if(changes.element) {
+        this.element.forEach(it => this.elements.push(it.type))
+        console.log(this.elements)
+      }
+  }
+
+  getElement(name: string) : string {
+    console.log(name)
+    return 'Água';
   }
 
 

@@ -17,11 +17,4 @@ export class CardSimplePokemonComponent implements OnInit {
     this.urlLink = '../detail-pokemon/' + this.pokemon.name;
   }
 
-  getFisrtCaps(name: string): string {
-    let nameBroked = name.split("");
-    nameBroked[0] = nameBroked[0].toUpperCase();
-    let resultString =  nameBroked.toString().replace(/,/g,'')
-    return resultString;
-  }
-
 }

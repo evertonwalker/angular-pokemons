@@ -1,7 +1,7 @@
 <div class="container">
         <app-title-page text="Bem vindo ao mundo pokemon" ></app-title-page>
         <app-input-filter type="text" label="Filtre seu pokemon" placeholder="Charmander..." id="filter-pokemon" (textOnInput)="filterPokemons($event)" ></app-input-filter>
-       
+
         <div class="row" *ngIf="(pokemons$ | async) as pokemonsList; else loader">
           <div class="col-12">
             <cdk-virtual-scroll-viewport [itemSize]="18 * 4" class="example-viewport row ">
@@ -13,6 +13,6 @@
         <ng-template #loader>
           <app-loading-spinner></app-loading-spinner>
         </ng-template>
-        
+
 
 </div>

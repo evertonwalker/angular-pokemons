@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PokemonGeneric } from 'src/app/interfaces/Pokemon-generic.interface';
-import { FilterByName } from 'src/app/pipes/filter-by-name.ipe';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { SnackServiceService } from 'src/app/services/snack-service.service';
 

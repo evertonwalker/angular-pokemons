@@ -15,10 +15,12 @@ import { InputFilterComponent } from './template/input-filter/input-filter.compo
 import { CardSimplePokemonComponent } from './template/card-simple-pokemon/card-simple-pokemon.component';
 import { LoadingSpinnerComponent } from './template/loading-spinner/loading-spinner.component';
 
-import { FilterByName } from './pipes/filter-by-name.ipe';
 import { PokemonResolve } from './resolvers/pokemon-resolver';
 import { ImagemPokemonComponent } from './components/template/imagem-pokemon/imagem-pokemon.component';
 import { ElementTypeComponent } from './components/template/element-type/element-type.component';
+
+import { FirstLetterUppercase } from './pipes/first-letter-uppercase.pipe';
+import { FilterByName } from './pipes/filter-by-name.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { ElementTypeComponent } from './components/template/element-type/element
     CardSimplePokemonComponent,
     LoadingSpinnerComponent,
     FilterByName,
+    FirstLetterUppercase,
     ImagemPokemonComponent,
     ElementTypeComponent,
   ],
@@ -52,7 +55,7 @@ import { ElementTypeComponent } from './components/template/element-type/element
       {
         path: '', redirectTo: '/pokemon-list', pathMatch: 'full'
       },
-      { 
+      {
         path: '**', component: NotFoundComponent
       }
     ]),
