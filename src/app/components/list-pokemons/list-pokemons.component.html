@@ -2,12 +2,10 @@
         <app-title-page text="Bem vindo ao mundo pokemon" ></app-title-page>
         <app-input-filter type="text" label="Filtre seu pokemon" placeholder="Charmander..." id="filter-pokemon" (textOnInput)="filterPokemons($event)" ></app-input-filter>
 
-        <div class="row" *ngIf="(pokemons$ | async) as pokemonsList; else loader">
-          <div class="col-12">
+        <div *ngIf="(pokemons$ | async) as pokemonsList; else loader">
             <cdk-virtual-scroll-viewport [itemSize]="18 * 4" class="example-viewport row ">
               <app-card-simple-pokemon  *cdkVirtualFor="let pokemon of pokemonsList | filterByName: filter " [pokemon]="pokemon"> </app-card-simple-pokemon>
             </cdk-virtual-scroll-viewport>
-          </div>
         </div>
 
         <ng-template #loader>

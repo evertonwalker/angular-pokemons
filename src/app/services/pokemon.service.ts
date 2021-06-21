@@ -8,10 +8,17 @@ import { PokemonRepositoryService } from '../repository/pokemon-repository.servi
 })
 export class PokemonService {
 
+  $pokemons: Observable<PokemonGeneric[]>;
+
   constructor(private pokemonRepository: PokemonRepositoryService) { }
 
   getAllPokemons(): Observable<PokemonGeneric[]> {
-    return this.pokemonRepository.getAllPokemons();
+    if(!this.$pokemons) {
+      this.$pokemons = this.pokemonRepository.getAllPokemons();
+      return this.$pokemons;
+    } else {
+      return this.$pokemons;
+    }
   }
 
   getDataPokemonByUrl(url: string): Observable<any>{

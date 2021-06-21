@@ -17,7 +17,6 @@ export class PokemonRepositoryService {
     return this.http.get<{ count: number, next: string, previous: string, results: PokemonGeneric[] }>
       (`${this.url}/pokemon/?limit=1118`)
       .pipe(
-        delay(3000),
         map((resultApi) => {
           return resultApi.results;
         })
