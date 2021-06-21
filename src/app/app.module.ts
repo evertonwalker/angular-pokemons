@@ -42,23 +42,22 @@ import { FilterByName } from './pipes/filter-by-name.pipe';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {
+    {
         path: 'pokemon-list', component: ListPokemonsComponent,
-
-      },
-      {
+    },
+    {
         path: 'detail-pokemon/:name', component: DetailPokemonComponent,
         resolve: {
-          pokemon: PokemonResolve
+            pokemon: PokemonResolve
         }
-      },
-      {
+    },
+    {
         path: '', redirectTo: '/pokemon-list', pathMatch: 'full'
-      },
-      {
+    },
+    {
         path: '**', component: NotFoundComponent
-      }
-    ]),
+    }
+], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     MaterialModule,
   ],
