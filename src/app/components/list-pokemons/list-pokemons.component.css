@@ -1,8 +1,9 @@
 .example-viewport {
     height: 55vh;
+    overflow: auto;
+    /* overflow-: hidden; */
   }
-  
+
   .example-item-detail {
     height: 18px;
   }
-  

@@ -14,10 +14,9 @@ export class ListPokemonsComponent implements OnInit {
   pokemons$: Observable<PokemonGeneric[]>;
   filter;
 
-  constructor(private snackService: SnackServiceService, private pokemonService: PokemonService) { }
+  constructor( private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.snackService.showSnack('Aqui você pode filtar seus pokemons', 5000);
     this.pokemons$ = this.pokemonService.getAllPokemons();
   }
 
