@@ -4,7 +4,7 @@
 
         <div *ngIf="(pokemons$ | async) as pokemonsList; else loader">
           <div  class="example-viewport">
-              <app-card-simple-pokemon  *ngFor="let pokemon of pokemonsList | filterByName: filter "
+              <app-card-simple-pokemon *ngFor="let pokemon of pokemonsList | filterByName: filter "
               [pokemon]="pokemon"> </app-card-simple-pokemon>
             </div>
         </div>

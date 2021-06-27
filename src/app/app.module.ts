@@ -21,6 +21,7 @@ import { ElementTypeComponent } from './components/template/element-type/element
 
 import { FirstLetterUppercase } from './pipes/first-letter-uppercase.pipe';
 import { FilterByName } from './pipes/filter-by-name.pipe';
+import { DialogPokemonDirective } from './directives/dialog-pokemon.directive';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { FilterByName } from './pipes/filter-by-name.pipe';
     FirstLetterUppercase,
     ImagemPokemonComponent,
     ElementTypeComponent,
+    DialogPokemonDirective
   ],
+  exports: [ DialogPokemonDirective],
   imports: [
     BrowserModule,
     HttpClientModule,
