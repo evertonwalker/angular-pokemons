@@ -64,7 +64,7 @@ import { DialogPokemonDirective } from './directives/dialog-pokemon.directive';
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [ ],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
