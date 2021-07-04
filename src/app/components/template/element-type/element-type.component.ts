@@ -14,10 +14,8 @@ export class ElementTypeComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-
       if(changes.element) {
         this.element.forEach(it => this.elements.push(it.type))
-        console.log(this.elements)
       }
   }
 

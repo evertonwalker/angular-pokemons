@@ -5,7 +5,6 @@ import { concatMap, delay, first } from "rxjs/operators";
 import { DetailPokemonComponent } from "../components/detail-pokemon/detail-pokemon.component";
 import { PokemonService } from "../services/pokemon.service";
 
-const DELAY = 3000;
 @Directive({
   selector: '[showPokemonOnOver]',
   providers: [ DetailPokemonComponent],
@@ -13,23 +12,20 @@ const DELAY = 3000;
 export class DialogPokemonDirective {
 
   @Input() pokemonName: string;
-  private readonly eventStream = new Subject<any>();
+  timeoutChange;
 
-  get eventStream$(): Observable<any> {
-    return this.eventStream.pipe(
-      delay(DELAY),
-      first(),
-      concatMap(() => this.eventStream)
-    );
-  }
-
-  constructor(private dialogService: MatDialog, private pokemonService: PokemonService) {
-    this.eventStream$.subscribe(pokemon => this.show(pokemon))
-   }
+  constructor(private dialogService: MatDialog, private pokemonService: PokemonService) { }
 
   @HostListener('mouseover')
   darkenOn() {
-    this.eventStream.next(this.pokemonName)
+    // if(!this.timeoutChange) {
+    //   clearTimeout(this.timeoutChange)
+    //   this.timeoutChange = setTimeout(() => {
+    //     this.show(this.pokemonName)
+    //   }, 1500);
+    //     }
+
+
   }
 
   show(pokemon): void {
