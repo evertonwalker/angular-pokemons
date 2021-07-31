@@ -1,7 +1,7 @@
-<div class="row" [routerLink]="urlLink" showPokemonOnOver [pokemonName]="pokemon.name">
-    <div class="col-12">
-        <span class="text-light card">
-           {{ pokemon.name | FisrtLetterUppercase }}
-        </span>
-    </div>
+
+<div class="card" [routerLink]="urlLink">
+  <img *ngIf="imagePokemon" [src]="imagePokemon" />
+  <p class="text-light">
+    {{ pokemon.name | FisrtLetterUppercase }}
+  </p>
 </div>
