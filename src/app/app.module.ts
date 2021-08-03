@@ -23,6 +23,8 @@ import { FirstLetterUppercase } from './pipes/first-letter-uppercase.pipe';
 import { FilterByName } from './pipes/filter-by-name.pipe';
 import { DialogPokemonDirective } from './directives/dialog-pokemon.directive';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,31 +42,32 @@ import { DialogPokemonDirective } from './directives/dialog-pokemon.directive';
     ElementTypeComponent,
     DialogPokemonDirective
   ],
-  exports: [ DialogPokemonDirective],
+  exports: [DialogPokemonDirective],
   imports: [
+    InfiniteScrollModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-    {
+      {
         path: 'pokemon-list', component: ListPokemonsComponent,
-    },
-    {
+      },
+      {
         path: 'detail-pokemon/:name', component: DetailPokemonComponent,
         resolve: {
-            pokemon: PokemonResolve
+          pokemon: PokemonResolve
         }
-    },
-    {
+      },
+      {
         path: '', redirectTo: '/pokemon-list', pathMatch: 'full'
-    },
-    {
+      },
+      {
         path: '**', component: NotFoundComponent
-    }
-], { relativeLinkResolution: 'legacy' }),
+      }
+    ], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

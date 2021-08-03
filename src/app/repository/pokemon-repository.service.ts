@@ -14,8 +14,8 @@ export class PokemonRepositoryService {
   constructor(private http: HttpClient) { }
 
   getAllPokemons(): Observable<PokemonGeneric[]> {
-    return this.http.get<{ count: number, next: string, previous: string, results: PokemonGeneric[] }>
-      (`${this.url}/pokemon/?limit=1118`)
+    return this.http.get<{ results: PokemonGeneric[] }>
+      (`${this.url}/pokemon/?limit=25`)
       .pipe(
         map((resultApi) => {
           return resultApi.results;
@@ -23,11 +23,21 @@ export class PokemonRepositoryService {
       )
   }
 
-  getPokemonDataUrl(url: string): Observable<any>{
+  getPokemonByOffSet(offset: number): Observable<PokemonGeneric[]> {
+    return this.http.get<{ results: PokemonGeneric[] }>
+      (`${this.url}/pokemon/?limit=10&offset=${offset}`)
+      .pipe(
+        map((resultApi) => {
+          return resultApi.results;
+        })
+      )
+  }
+
+  getPokemonDataUrl(url: string): Observable<any> {
     return this.http.get(url);
   }
 
-  getPokemonByName(name: string): Observable<any>{
+  getPokemonByName(name: string): Observable<any> {
     return this.http.get(this.url + `/pokemon/${name}`);
   }
 
