@@ -24,6 +24,7 @@ import { FilterByName } from './pipes/filter-by-name.pipe';
 import { DialogPokemonDirective } from './directives/dialog-pokemon.directive';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { GenerationsComponent } from './components/template/generations/generations.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     FirstLetterUppercase,
     ImagemPokemonComponent,
     ElementTypeComponent,
-    DialogPokemonDirective
+    DialogPokemonDirective,
+    GenerationsComponent
   ],
   exports: [DialogPokemonDirective],
   imports: [

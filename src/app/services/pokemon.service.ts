@@ -38,4 +38,8 @@ export class PokemonService {
     return this.pokemonRepository.getPokemonByOffSet(offset);
   }
 
+  changePokemonsByGeneration(id: number): void {
+    
+  }
+
 }

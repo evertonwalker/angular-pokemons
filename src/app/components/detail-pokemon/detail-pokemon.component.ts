@@ -7,15 +7,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./detail-pokemon.component.css']
 })
 export class DetailPokemonComponent implements OnInit {
-
   pokemon;
   titlePage: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-      this.pokemon  = this.route.snapshot.data['pokemon'];
-      this.titlePage = 'Este é o ' + this.pokemon.name;
+      this.pokemon = this.route.snapshot.data['pokemon'];
+      this.titlePage = `Este é o ${this.pokemon ? this.pokemon.name : ''}`;
   }
 
 }

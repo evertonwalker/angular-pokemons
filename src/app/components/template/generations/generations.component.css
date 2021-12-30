@@ -1,0 +1,39 @@
+.container {
+    margin-bottom: 5%;
+}
+
+.title-container {
+    width: 100%;
+    text-align: center;
+}
+
+.list-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    width: 370px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float:left
+}
+
+.list-item {
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-left: 1%;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.selected-item {
+    background-color: #495057;
+    color: white;
+}

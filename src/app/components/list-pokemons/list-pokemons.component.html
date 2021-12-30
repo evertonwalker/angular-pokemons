@@ -1,27 +1,17 @@
 <div class="container">
   <app-title-page text="Bem vindo ao mundo pokemon"></app-title-page>
-  <app-input-filter type="text" label="Filtre seu pokemon" placeholder="Charmander..." id="filter-pokemon"
-    (textOnInput)="filterPokemons($event)"></app-input-filter>
+  <!-- <app-input-filter type="text" label="Filtre seu pokemon" placeholder="Charmander..." id="filter-pokemon"
+    (textOnInput)="filterPokemons($event)"></app-input-filter> -->
 
-  <div *ngIf="pokemons$.length > 0 ; else loader"  class="search-results" infiniteScroll
-    [infiniteScrollDistance]="2" [infiniteScrollThrottle]="25" (scrolled)="onScroll()">
+  <app-generations></app-generations>
+
+  <div *ngIf="pokemons$.length > 0 ; else loader"  class="search-results" >
     <div class="row">
       <div *ngFor="let pokemon of pokemons$ | filterByName: filter" class="col-12 col-sm-6 col-md-3">
         <app-card-simple-pokemon [pokemon]="pokemon"></app-card-simple-pokemon>
       </div>
     </div>
   </div>
-
-  <!-- <div *ngIf="pokemons$ | async as pokemonsList; else loader" class="row">
-    <cdk-virtual-scroll-viewport [itemSize]="32 * 10" class="example-viewport">
-      <div
-        *cdkVirtualFor="let pokemon of pokemonsList | filterByName: filter"
-        class="col-12 col-sm-6 col-md-3"
-      >
-        <app-card-simple-pokemon [pokemon]="pokemon"></app-card-simple-pokemon>
-      </div>
-    </cdk-virtual-scroll-viewport>
-  </div> -->
 
   <ng-template #loader>
     <app-loading-spinner></app-loading-spinner>

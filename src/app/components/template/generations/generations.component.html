@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="title-container">
+        <label> Selecione uma geração: </label>
+    </div>
+    <div class="list-container">
+        <ul class="list">
+            <li class="list-item" [attr.id]="'generation-item-'+ g.id" [class.selected-item]="g.id === selectedId"
+                *ngFor="let g of generations" (click)="updatePokemons(g .id)">
+                {{ g .name }}
+            </li>
+        </ul>
+    </div>
+</div>

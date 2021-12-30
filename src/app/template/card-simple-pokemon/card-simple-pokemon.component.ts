@@ -16,11 +16,13 @@ export class CardSimplePokemonComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.urlLink = '../detail-pokemon/' + this.pokemon.name;
-    this.pokemonService.getPokemonDataByName(this.pokemon.name)
-      .subscribe(result => {
-        this.imagePokemon = result.sprites.front_default;
-      })
+    if (this.pokemon) {
+      this.urlLink = `../detail-pokemon/${this.pokemon.name}`;
+      this.pokemonService.getPokemonDataByName(this.pokemon.name)
+        .subscribe(result => {
+          this.imagePokemon = result.sprites.front_default;
+        })
+    }
   }
 
 }

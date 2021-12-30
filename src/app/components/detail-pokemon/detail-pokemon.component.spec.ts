@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
 
 import { DetailPokemonComponent } from './detail-pokemon.component';
 
@@ -8,6 +9,7 @@ describe('DetailPokemonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [ RouterTestingModule ],
       declarations: [ DetailPokemonComponent ]
     })
     .compileComponents();

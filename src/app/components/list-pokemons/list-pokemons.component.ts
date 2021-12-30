@@ -29,14 +29,4 @@ export class ListPokemonsComponent implements OnInit {
     this.filter = term;
   }
 
-  onScroll(): void {
-    this.initOffset += 25;
-
-    this.pokemonService.getMorePokekmonsByOffset(this.initOffset)
-      .subscribe(resultNewPokemons => {
-        this.pokemons$ = [...this.pokemons$, ...resultNewPokemons]
-      });
-
-  }
-
 }

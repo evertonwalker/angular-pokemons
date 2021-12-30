@@ -1,5 +1,5 @@
 
-<div class="card" [routerLink]="urlLink">
+<div class="card" [routerLink]="urlLink" *ngIf="pokemon">
   <img *ngIf="imagePokemon" [src]="imagePokemon" />
   <p class="text-light">
     {{ pokemon.name | FisrtLetterUppercase }}

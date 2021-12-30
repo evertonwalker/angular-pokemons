@@ -9,12 +9,14 @@
     width: 100%;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Sigmar One' !important;
+}
 
 html, body {
-    background-color:#0D1117;
-    font-family: DM Sans !important;
-    height: 100%;
-    /* background-image: url("assets/img/998181.jpeg"); */
+  font-family: 'Sigmar One' !important;
+  height: 100%;
+  background-image: url("assets/img/background.jpg");
 }
 
 
