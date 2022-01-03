@@ -1,6 +1,10 @@
-
 <div class="card" [routerLink]="urlLink" *ngIf="pokemon">
-  <img *ngIf="imagePokemon" [src]="imagePokemon" />
+  <div *ngIf="imagePokemon; else loader">
+    <img [src]="imagePokemon" />
+  </div>
+  <ng-template #loader>
+    <img src="../../../assets/img/whos_that_pokemon.png" class="unknown-image" />
+  </ng-template>
   <p class="text-light">
     {{ pokemon.name | FisrtLetterUppercase }}
   </p>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PokemonGeneric } from 'src/app/interfaces/Pokemon-generic.interface';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
@@ -20,6 +21,7 @@ export class CardSimplePokemonComponent implements OnInit {
       this.urlLink = `../detail-pokemon/${this.pokemon.name}`;
       this.pokemonService.getPokemonDataByName(this.pokemon.name)
         .subscribe(result => {
+          if(result)
           this.imagePokemon = result.sprites.front_default;
         })
     }

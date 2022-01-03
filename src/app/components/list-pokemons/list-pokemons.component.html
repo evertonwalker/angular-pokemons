@@ -3,11 +3,11 @@
   <!-- <app-input-filter type="text" label="Filtre seu pokemon" placeholder="Charmander..." id="filter-pokemon"
     (textOnInput)="filterPokemons($event)"></app-input-filter> -->
 
-  <app-generations></app-generations>
+  <app-generations (changeGeneration)="getNewGeneration($event)"></app-generations>
 
-  <div *ngIf="pokemons$.length > 0 ; else loader"  class="search-results" >
+  <div *ngIf="pokemons$ | async; else loader"  class="search-results" >
     <div class="row">
-      <div *ngFor="let pokemon of pokemons$ | filterByName: filter" class="col-12 col-sm-6 col-md-3">
+      <div *ngFor="let pokemon of pokemons$ | async" class="col-12 col-sm-6 col-md-3">
         <app-card-simple-pokemon [pokemon]="pokemon"></app-card-simple-pokemon>
       </div>
     </div>

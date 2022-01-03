@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class GenerationsComponent implements OnInit {
 
   selectedId = 1
-
   generations = [
     { id: 1, name: 'I'}, 
     { id: 2, name: 'II'}, 
@@ -21,14 +20,16 @@ export class GenerationsComponent implements OnInit {
     { id: 8, name: 'VIII'}, 
   ]
 
-  constructor(private pokemonService: PokemonService) { }
+  @Output() changeGeneration = new EventEmitter()
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   updatePokemons(id: number): void {
     this.selectedId = id 
-    this.pokemonService.changePokemonsByGeneration(id)
+    this.changeGeneration.emit(id)
   }
 
 }

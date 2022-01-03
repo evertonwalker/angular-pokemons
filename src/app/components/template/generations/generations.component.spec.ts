@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 import { GenerationsComponent } from './generations.component';
-import { PokemonService } from 'src/app/services/pokemon.service';
 
 describe('GenerationsComponent', () => {
   let component: GenerationsComponent;
@@ -10,8 +8,6 @@ describe('GenerationsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      providers: [PokemonService],
       declarations: [GenerationsComponent]
     })
       .compileComponents();

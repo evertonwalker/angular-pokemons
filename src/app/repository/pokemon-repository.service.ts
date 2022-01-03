@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, delay, map } from 'rxjs/operators';
 import { PokemonGeneric } from '../interfaces/Pokemon-generic.interface';
 
 @Injectable({
@@ -38,7 +38,25 @@ export class PokemonRepositoryService {
   }
 
   getPokemonByName(name: string): Observable<any> {
-    return this.http.get(this.url + `/pokemon/${name}`);
+    return this.http.get(this.url + `/pokemon/${name}`)
+      .pipe(
+        catchError(this.handleErro)
+      );
+  }
+
+  getPokemonByGeneration(id: number): Observable<[{ name: string, url: string }]> {
+    return this.http.get(this.url + `/generation/${id}`)
+      .pipe(
+        map((result: any) => {
+          return result.pokemon_species
+        })
+      )
+  }
+
+  private handleErro(error: HttpErrorResponse) {
+    if (error.status === 404) {
+      return of(undefined)
+    }
   }
 
 

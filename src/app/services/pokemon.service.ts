@@ -38,8 +38,8 @@ export class PokemonService {
     return this.pokemonRepository.getPokemonByOffSet(offset);
   }
 
-  changePokemonsByGeneration(id: number): void {
-    
+  getPokemonsByGeneration(id: number): Observable<PokemonGeneric[]> {
+    return this.pokemonRepository.getPokemonByGeneration(id)
   }
 
 }

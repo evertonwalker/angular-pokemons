@@ -12,21 +12,22 @@ import { SnackServiceService } from 'src/app/services/snack-service.service';
 })
 export class ListPokemonsComponent implements OnInit {
 
-  pokemons$: PokemonGeneric[] = []
+  pokemons$: Observable<PokemonGeneric[]>;
   filter;
   initOffset = 25;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.pokemonService.getAllPokemons().subscribe(result => this.pokemons$ = result);
-    this.pokemonService.pokemonByTypeSearch.subscribe(result => {
-      this.pokemons$.push(result);
-    })
+    this.getNewGeneration(1);
   }
 
   filterPokemons(term: string): void {
     this.filter = term;
+  }
+
+  getNewGeneration(id: number): void {
+    this.pokemons$ = this.pokemonService.getPokemonsByGeneration(id)
   }
 
 }

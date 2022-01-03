@@ -1,12 +1,27 @@
 .card {
     padding: 16px 4px 16px 4px;
     border: 8px;
-    background-color: #15181C;
+    background-color: #4c4d4e;
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     margin-top: 1%;
     align-items: center;
     font-size: 1.8em;
     border: 1px solid rgb(223, 217, 217);
     cursor: pointer;
+    box-shadow: rgba(83, 83, 83, 0.4) -5px 5px, rgba(20, 20, 20, 0.3) -10px 10px, rgba(15, 15, 15, 0.2) -15px 15px, rgba(5, 5, 5, 0.1) -20px 20px, rgba(5, 5, 5, 0.05) -25px 25px;
 }
+
+.unknown-image {
+    width: 120px;
+    height: 70px;
+    margin-bottom: 13%;
+    border-radius: 9px;
+}
+
+p {
+    font-weight: 100;
+    font-size: 23px;
+}
+
+
