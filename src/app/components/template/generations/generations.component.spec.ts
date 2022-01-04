@@ -24,6 +24,8 @@ describe('GenerationsComponent', () => {
   });
 
   it('should select another generation and change button active generation', () => {
+
+    spyOn(component.changeGeneration, 'emit')
     const firstGeneration = document.getElementById('generation-item-1')
     expect(firstGeneration.className).toContain('selected')
 
@@ -34,6 +36,7 @@ describe('GenerationsComponent', () => {
 
     expect(secondGeneration.className).toContain('selected')
     expect(firstGeneration.className).not.toContain('selected')
+    expect(component.changeGeneration.emit).toHaveBeenCalled()
 
   })
 });
