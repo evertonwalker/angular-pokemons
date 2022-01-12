@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { LoadingSpinnerComponent } from './loading-spinner.component';
 
@@ -8,7 +9,8 @@ describe('LoadingSpinnerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoadingSpinnerComponent ]
+      declarations: [ LoadingSpinnerComponent ],
+      imports:[MatProgressSpinnerModule]
     })
     .compileComponents();
   }));
